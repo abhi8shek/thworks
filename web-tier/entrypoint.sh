@@ -31,6 +31,4 @@ restorecon -FR /var/www/mediawiki
 firewall-cmd --permanent --zone=public --add-service=http
 firewall-cmd --permanent --zone=public --add-service=https
 systemctl restart firewalld
-
-# Keep the container running
-exec "$@"
+systemctl restart httpd

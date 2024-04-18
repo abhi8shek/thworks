@@ -11,5 +11,11 @@ RUN dnf module reset php && \
 # Expose port 80
 EXPOSE 80
 
-# Start Apache service
-CMD ["/bin/bash", "-c", "exec /usr/sbin/httpd -DFOREGROUND && systemctl restart httpd"]
+# Copy entrypoint.sh script into the container
+COPY web-tier/entrypoint.sh /entrypoint.sh
+
+# Grant execute permission to the entrypoint script
+RUN chmod +x /entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
