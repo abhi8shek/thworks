@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Web-tier Docker Image Publish
 
 on:
   workflow_dispatch:  # Manually trigger the workflow
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  web-build-and-push:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
