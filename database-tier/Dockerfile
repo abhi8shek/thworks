@@ -1,5 +1,4 @@
-# Use the official Oracle Linux 8 image as the base image
-FROM oraclelinux:8
+FROM centos:8
 
 # Install required packages
 RUN dnf install -y mariadb-server mariadb && \
