@@ -26,12 +26,11 @@ EOF
 cd /var/www
 wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz
 tar -zxf mediawiki-1.41.1.tar.gz
-ln -s mediawiki-1.41.1/ mediawiki
+mv -f mediawiki-1.41.1/ html/mediawiki
 
 # Change ownership of MediaWiki directory
-chown -R apache:apache /var/www/mediawiki-1.41.1
-chmod 775 /var/www/mediawiki-1.41.1
-chmod -R 644 /var/www/mediawiki-1.41.1/
+chown -R apache:apache /var/www/html/mediawiki
+chmod -R 755 /var/www/html/mediawiki/
 
 # Set SELinux context for MediaWiki directories
 restorecon -FR /var/www/mediawiki-1.41.1/
