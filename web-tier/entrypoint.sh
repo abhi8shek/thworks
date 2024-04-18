@@ -22,11 +22,10 @@ Listen 443 https
 </VirtualHost>
 EOF
 
-wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz
-
 # Extract MediaWiki tarball
 cd /var/www
-tar -zxf /root/mediawiki-1.41.1.tar.gz
+wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz
+tar -zxf mediawiki-1.41.1.tar.gz
 ln -s mediawiki-1.41.1/ mediawiki
 
 HTTPD_CONF="/etc/httpd/conf/httpd.conf"
