@@ -1,7 +1,7 @@
 name: Build and Push Docker Image
 
 on:
-  push:
+  workflow_dispatch:  # Manually trigger the workflow
     branches:
       - main
 
@@ -26,8 +26,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: web-tier/Dockerfile
+          file: database-tier/Dockerfile
           push: true
           tags: |
-            abhishekbhattu9/mediawiki-web:latest
-            abhishekbhattu9/mediawiki-web:${{ github.run_number }}
+            abhishekbhattu9/mediawiki-db:latest
+            abhishekbhattu9/mediawiki-db:${{ github.run_number }}
