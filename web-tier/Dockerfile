@@ -5,6 +5,7 @@ FROM oraclelinux:8
 RUN dnf module reset php && \
     dnf module enable php:7.4 && \
     dnf install wget && \
+    dnf install openssl && \
     dnf install -y httpd php php-mysqlnd php-gd php-xml  php-mbstring php-json mod_ssl php-intl php-apcu && \
     dnf install -y firewalld && \
     systemctl enable firewalld
