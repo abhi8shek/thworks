@@ -1,8 +1,8 @@
 FROM centos:8
 
 # Install required packages
-RUN dnf install -y mariadb-server mariadb && \
-    dnf clean all
+RUN yum install centos-release-scl && \
+    yum install mariadb-server mariadb 
 
 # Expose port 80
 EXPOSE 3306
