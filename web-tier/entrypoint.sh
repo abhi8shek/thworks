@@ -38,5 +38,4 @@ restorecon -FR /var/www/mediawiki-1.41.1/
 restorecon -FR /var/www/mediawiki
 
 # start apache server
-/usr/sbin/httpd -k start
-exec "$@"
+/usr/sbin/httpd -k start -DFOREGROUND
