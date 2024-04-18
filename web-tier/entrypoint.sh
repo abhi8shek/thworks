@@ -26,7 +26,8 @@ EOF
 cd /var/www
 wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz
 tar -zxf mediawiki-1.41.1.tar.gz
-mv -f mediawiki-1.41.1/ html/mediawiki
+mkdir -p /var/www/html/mediawiki
+mv -f mediawiki-*/* /var/www/html/mediawiki
 
 # Change ownership of MediaWiki directory
 chown -R apache:apache /var/www/html/mediawiki
