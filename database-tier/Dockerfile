@@ -9,7 +9,7 @@ RUN dnf install -y mariadb-server mariadb && \
 EXPOSE 3306
 
 # Copy entrypoint.sh script into the container
-COPY ${pwd}/entrypoint.sh /entrypoint.sh
+COPY database-tier/entrypoint.sh /entrypoint.sh
 
 # Grant execute permission to the entrypoint script
 RUN chmod +x /entrypoint.sh
