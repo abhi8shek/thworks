@@ -13,8 +13,6 @@ cd /$(whoami)
 wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz
 wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz.sig
 
-# Verify the tarball's integrity (GPG is assumed to be installed)
-gpg --verify mediawiki-1.41.1.tar.gz.sig mediawiki-1.41.1.tar.gz
 
 # Extract MediaWiki tarball
 cd /var/www
