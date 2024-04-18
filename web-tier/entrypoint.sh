@@ -28,22 +28,10 @@ wget https://releases.wikimedia.org/mediawiki/1.41/mediawiki-1.41.1.tar.gz
 tar -zxf mediawiki-1.41.1.tar.gz
 ln -s mediawiki-1.41.1/ mediawiki
 
-HTTPD_CONF="/etc/httpd/conf/httpd.conf"
-SSL_CERTIFICATE="/etc/pki/tls/certs/localhost.crt"
-SSL_PRIVATE_KEY="/etc/pki/tls/private/localhost.key"
-
-sed -i 's|/var/www/html|/var/www/html/mediawiki|g' $HTTPD_CONF
-# Listen on Port 443 Only
-sed -i 's|^Listen [0-9]*$|Listen 443|' $HTTPD_CONF
-sed -i '/^Listen [0-9]*$/d' $HTTPD_CONF
-
-# Disable Default Directory
-sed -i '/<Directory "\/var\/www\/html">/,/<\/Directory>/d' $HTTPD_CONF
-
-
-
 # Change ownership of MediaWiki directory
 chown -R apache:apache /var/www/mediawiki-1.41.1
+chmod 775 /var/www/mediawiki-1.41.1
+chmod -R 644 /var/www/mediawiki-1.41.1/
 
 # Set SELinux context for MediaWiki directories
 restorecon -FR /var/www/mediawiki-1.41.1/
