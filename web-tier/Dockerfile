@@ -7,6 +7,7 @@ RUN dnf  install php-intl && \
 
 # Expose port 80
 EXPOSE 80
+EXPOSE 443
 
 # Copy entrypoint.sh script into the container
 COPY web-tier/entrypoint.sh /entrypoint.sh
