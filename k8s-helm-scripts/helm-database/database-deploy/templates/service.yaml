@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "database-deploy.fullname" . }}
+  name: mariadb-service
   labels:
     {{- include "database-deploy.labels" . | nindent 4 }}
 spec:

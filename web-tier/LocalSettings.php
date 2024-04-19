@@ -30,7 +30,7 @@ $wgMetaNamespace = "Test";
 $wgScriptPath = "/mediawiki";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = "https://20.84.41.53";
+$wgServer = "https://localhost";
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
@@ -56,7 +56,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "172.17.0.2";
+$wgDBserver = "mariadb-service";
 $wgDBname = "wikidatabase";
 $wgDBuser = "root";
 $wgDBpassword = "Password@123";
