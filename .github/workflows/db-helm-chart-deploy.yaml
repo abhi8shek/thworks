@@ -23,6 +23,7 @@ jobs:
       with:
         version: 'latest'
     - name: Configure kubectl
+      run: mkdir -p $HOME/.kube && touch $HOME/.kube/config
       run: echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
     - name: Install Helm chart
       run: helm install my-release-${{ github.run_number }} ./k8s-helm-scripts/helm-database/database-deploy
