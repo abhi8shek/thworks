@@ -50,4 +50,4 @@ jobs:
         run: echo "${{ secrets.KUBE_CONFIG }}" > $HOME/.kube/config
 
       - name: Install Helm chart
-        run: helm upgrade my-webrelease-${{ github.run_number }} ./k8s-helm-scripts/helm-webserver/webserver-deploy --install
+        run: helm install my-webrelease-${{ github.run_number }} ./k8s-helm-scripts/helm-webserver/webserver-deploy --force
