@@ -61,7 +61,7 @@ data:
     
     ## Database settings
     $wgDBtype = "mysql";
-    $wgDBserver = "mariadb-service";
+    $wgDBserver = "10.224.0.43";
     $wgDBname = "wikidatabase";
     $wgDBuser = "root";
     $wgDBpassword = "Password@123";
