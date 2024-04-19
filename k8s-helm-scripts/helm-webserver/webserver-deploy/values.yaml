@@ -45,7 +45,7 @@ service:
 
 ingress:
   enabled: true
-  className: webapprouting.kubernetes.azure.com
+  className: ""
   annotations:
     kubernetes.io/ingress.class: nginx
   hosts:
