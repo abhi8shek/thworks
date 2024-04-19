@@ -4,7 +4,7 @@ FROM mariadb:lts
 EXPOSE 3306
 
 # Copy entrypoint.sh script into the container
-COPY database-tier/entrypoint.sh /entrypoint.sh
+COPY database-tier/entrypoint.sh /docker-entrypoint-initdb.d/entrypoint.sh
 
 # Grant execute permission to the entrypoint script
 RUN chmod +x /entrypoint.sh
