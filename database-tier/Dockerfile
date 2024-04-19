@@ -1,6 +1,5 @@
 FROM mariadb:lts
 
-RUN apt update $$ apt  install -y mariaDB-client
 # Expose port 80
 EXPOSE 3306
 
