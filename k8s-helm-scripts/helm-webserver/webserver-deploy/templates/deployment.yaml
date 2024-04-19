@@ -31,10 +31,10 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          volumeMounts:
-            - name: mediawiki-localsettings
-              mountPath: /var/www/html/mediawiki/LocalSettings.php
-              subPath: LocalSettings.php
+          # volumeMounts:
+          #   - name: mediawiki-localsettings
+          #     mountPath: /var/www/html/mediawiki/LocalSettings.php
+          #     subPath: LocalSettings.php
           ports:
             - name: http
               containerPort: 80
