@@ -1,10 +1,6 @@
-# Use the official Oracle Linux 8 image as the base image
-FROM oraclelinux:8
+FROM mariadb:lts
 
-# Install required packages
-RUN dnf install -y mariadb-server mariadb && \
-    dnf clean all
-
+RUN apt update $$ apt  install -y mariaDB-client
 # Expose port 80
 EXPOSE 3306
 
@@ -14,7 +10,7 @@ COPY database-tier/entrypoint.sh /entrypoint.sh
 # Grant execute permission to the entrypoint script
 RUN chmod +x /entrypoint.sh
 
-# Set the entrypoint
-ENTRYPOINT ["/entrypoint.sh"]
+# Set the command
+CMD ["/entrypoint.sh"]
 
-# Note: make sure to pass environment variable MYSQL_ROOT_PASSWORD during execution on this image
+# Note: make sure to pass environment variable MARIADB_ROOT_PASSWORD during execution on this image
