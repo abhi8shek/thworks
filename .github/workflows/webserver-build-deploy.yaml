@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-push:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,11 +29,6 @@ jobs:
           tags: |
             abhishekbhattu9/mediawiki-web:latest
             abhishekbhattu9/mediawiki-web:${{ github.run_number }}
-
-  deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
       - name: Checkout code
         uses: actions/checkout@v2
       
